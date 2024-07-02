@@ -16,5 +16,5 @@ defmodule ExTwilio.Recording do
 
   use ExTwilio.Resource, import: [:stream, :all, :find, :destroy, :update]
 
-  def parents, do: [:account]
+  def parents, do: [:account, :call, :recording]
 end
