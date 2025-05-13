@@ -89,7 +89,7 @@ defmodule ExTwilio.Api do
   @spec update(atom, String.t(), data, list, list) :: Parser.success() | Parser.error()
   def update(module, sid, data, options \\ [], request_opts \\ [])
 
-  def update(module, sid, data, options, request_opts) when is_binary(sid),
+  def update(module, sid, data, options, request_opts) when is_nil(sid) or is_binary(sid),
     do: do_update(module, sid, data, options, request_opts)
 
   def update(module, %{sid: sid}, data, options, request_opts),
